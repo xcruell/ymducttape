@@ -1,0 +1,53 @@
+plugins {
+    id 'dev.architectury.loom' apply false
+}
+
+tasks.named('wrapper', Wrapper).configure {
+    distributionType = Wrapper.DistributionType.BIN
+}
+
+tasks.register('neoforge-build') {
+    group = 'NeoForge'
+    description = 'Build the NeoForge JAR'
+    dependsOn ':neoforge:build'
+}
+
+tasks.register('neoforge-runClient') {
+    group = 'NeoForge'
+    description = 'Run the NeoForge client'
+    dependsOn ':neoforge:runClient'
+}
+
+tasks.register('fabric-build') {
+    group = 'Fabric'
+    description = 'Build the Fabric JAR'
+    dependsOn ':fabric:build'
+}
+
+tasks.register('fabric-runClient') {
+    group = 'Fabric'
+    description = 'Run the Fabric client'
+    dependsOn ':fabric:runClient'
+}
+
+subprojects {
+    version = mod_version
+    group = mod_group_id
+
+    plugins.withId('java') {
+        java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+        tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+    }
+
+    repositories {
+        maven { name = 'ParchmentMC'; url = 'https://maven.parchmentmc.org' }
+        maven { name = 'neoforged releases'; url = 'https://maven.neoforged.net/releases/' }
+        maven { name = 'TerraformersMC'; url = 'https://maven.terraformersmc.com/' }
+        exclusiveContent {
+            forRepository {
+                maven { name = 'Modrinth'; url = 'https://api.modrinth.com/maven' }
+            }
+            filter { includeGroup 'maven.modrinth' }
+        }
+    }
+}

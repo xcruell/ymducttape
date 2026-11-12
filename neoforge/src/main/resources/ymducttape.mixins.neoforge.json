@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.yesmenn.ducttape.mixin.neoforge",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "MixinYmAbstractContainerScreen"
+  ]
+}

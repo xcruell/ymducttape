@@ -1,0 +1,18 @@
+{
+  "vertex": "ymducttape:ym_portal",
+  "fragment": "ymducttape:ym_portal",
+  "samplers": [
+    { "name": "Sampler0" },
+    { "name": "Sampler1" }
+  ],
+  "uniforms": [
+    { "name": "ModelViewMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "ColorModulator", "type": "float", "count": 4, "values": [ 1.0, 1.0, 1.0, 1.0 ] },
+    { "name": "YmTime", "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "YmParallax", "type": "float", "count": 2, "values": [ 0.0, 0.0 ] },
+    { "name": "YmRect", "type": "float", "count": 4, "values": [ 0.0, 0.0, 1.0, 1.0 ] },
+    { "name": "YmTintA", "type": "float", "count": 3, "values": [ 0.08, 0.42, 0.40 ] },
+    { "name": "YmTintB", "type": "float", "count": 3, "values": [ 0.42, 0.22, 0.72 ] }
+  ]
+}

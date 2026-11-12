@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ymducttape",
+  "version": "${version}",
+  "name": "YM Duct Tape",
+  "description": "Shared core of the YesMenn! mods: the YesMenn! creative tab with its sections and code used by several YM mods.",
+  "authors": ["xcruell", "YesMenn!"],
+  "license": "YesMenn Custom License 1.0",
+
+  "environment": "*",
+
+  "entrypoints": {
+    "main": [
+      "com.yesmenn.ducttape.YMDuctTapeFabric"
+    ],
+    "client": [
+      "com.yesmenn.ducttape.client.YMDuctTapeFabricClient"
+    ],
+    "modmenu": [
+      "com.yesmenn.ducttape.client.YMDuctTapeModMenu"
+    ]
+  },
+
+  "mixins": [
+    "ymducttape.mixins.json",
+    "ymducttape.mixins.fabric.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": "1.21.1"
+  },
+
+  "suggests": {
+    "modmenu": "*"
+  }
+}
